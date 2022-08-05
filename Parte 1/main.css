@@ -1,0 +1,20 @@
+.grid{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;/*Crea columnas distribuidas según el porcentaje de pantalla indicado*/
+    grid-template-rows: auto 100px;/*fila1, fila2... indica el alto de las filas, la primera se ajustas a la cantidad de contenido*/
+    gap: 1em;/*Establece espacios entre filas y columnas*/
+    /*column-gap: 1em; establece espacios entre las columnas*/
+    /*row-gap: 1em; establece espacios entre las filas*/
+}   
+
+
+/*Solo los div que tengan la clase grid aplica estos estilos*/
+.grid div {
+    background: #ecf0f1;
+    padding: 1em;
+}
+
+/*Solo los div que tengan la clase grid aplica estos estilos al pasar por encima*/
+.grid div:hover{
+    border: 1px solid #f1c40f;
+}

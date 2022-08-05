@@ -1,0 +1,40 @@
+.grid{
+    display: grid;
+    /*Si quiero dividir en fracciones iguales los elementos puedo usar 1fr*/
+    /*Pero si quisiera agregar muchas columnas puede no ser tan eficiente*/
+    /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+    /*Entonces pudo agregar la funcion repeat(las veces que se repetira, la medida)*/
+    grid-template-columns: repeat(4, 1fr);
+    /*Indico el alto mínimo y máximo de cada fila
+    minmax(minimo, maximo); 
+    Si coloco auto en el segundo valor se va a adaptar a la cantidad de texto que contenga
+    el elemento
+    */
+    grid-template-rows: minmax(20px, auto);
+    gap: 1em; 
+}   
+
+.nested-grid{
+    display: grid;/*Así los elementos no se ponen en columnas*/
+    grid-template-columns: repeat(3, 1fr);/*Aquí ya se distribuyen los elementos en 3 columnas*/
+    grid-auto-rows: 100px;/*Estoy estableciendo que cada elemento de cada fila tendrá 100 pixeles de altura*/
+    gap: 1em;
+}
+/*Puedo quitar y poner uno por uno los estilos del bloque anterior para poder observar
+como se comportan gracias a los estilos del siguiente bloque*/
+.nested-grid > div{
+    border: 1px solid #000;
+    background: #f1c40f;
+    padding: 1em;
+}
+
+/*Solo los div que tengan la clase grid aplica estos estilos*/
+.grid > div {
+    background: #ecf0f1;
+    padding: 1em;
+}
+
+/*Solo los div que tengan la clase grid aplica estos estilos al pasar por encima*/
+.grid > div:hover{
+    border: 1px solid #f1c40f;
+}

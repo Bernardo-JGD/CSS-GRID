@@ -1,0 +1,34 @@
+.grid{
+    display: grid;
+    /*Si quiero dividir en fracciones iguales los elementos puedo usar 1fr*/
+    /*Pero si quisiera agregar muchas columnas puede no ser tan eficiente*/
+    /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+    /*Entonces pudo agregar la funcion repeat(las veces que se repetira, la medida)*/
+    grid-template-columns: repeat(3, 1fr);
+    
+    grid-auto-rows: minmax(100px, auto);/*indico que todas las filas tendrán un espacio mínimo de 100px y se ajustarán si tienen más contenido*/
+    gap: 1em; 
+
+    /*Esta propiedad es para alinear de manera horizontal el elemento en su espacio delimitado*/
+    justify-items: stretch;
+    /*stretch: Por defecto los elementos abarcan todo el espacio que tienen disponible*/
+    /*start-center-end: los elementos se colocarán al principio, centro o final de manera horizontal,
+      pero si se les agrega más contenido comenzarán a tomar más espacio
+      hasta llegar al máximo permitido*/
+
+    /*Esta propiedad es para alinear de manera vertical el elemento en su espacio delimitado*/
+    align-items: stretch;/*start-center-end por default: stretch*/
+    /*Esta propieadad se comporta igual que la anterior pero de manera vertical*/
+
+}   
+
+/*Solo los div que tengan la clase grid aplica estos estilos*/
+.grid > div {
+    background: #ecf0f1;
+    padding: 1em;
+}
+
+/*Solo los div que tengan la clase grid aplica estos estilos al pasar por encima*/
+.grid > div:hover{
+    border: 1px solid #f1c40f;
+}
